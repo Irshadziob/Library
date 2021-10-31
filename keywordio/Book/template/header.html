@@ -1,0 +1,49 @@
+{% load static %}
+<div class="row">
+    <div class="col-md-2">
+        <img class="logo" src="{% static 'image/pngegg.png' %}">
+
+    </div>
+    <div class="col-md-10">
+        <nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>BOOK</h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="margin-left:320px;letter-spacing:.2rem;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Social</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Author</a>
+        </li>
+
+
+
+
+      </ul>
+        {% if user.is_authenticated %}
+        <li style="margin-right:10px;">{{user.username}}</li>
+        <a href="{% url 'Bookapp:login' %}" class="btn btn-danger">logout</a>
+
+        {% else %}
+     <a href="{% url 'Bookapp:login' %}" class="btn btn-success">login</a>
+        <a href="{% url 'Bookapp:register' %}" class="btn btn-success">register</a>
+        {% endif %}
+
+    </div>
+  </div>
+</nav>
+        </nav>
+        
+    </div>
+</div>

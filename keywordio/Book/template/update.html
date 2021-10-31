@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div style="height:150px;width:100%">
+
+    </div>
+</section>
+<section class="p-5">
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+
+</form>
+         </div>
+
+ </div>
+
+</div>
+ </section>
+
+{% endblock %}

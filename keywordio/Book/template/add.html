@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div style="height:150px;width:100%">
+
+    </div>
+</section>
+<section>
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="form-control" type="text" name="name" placeholder="enter library name"> <br>
+    <br>
+    <input class="form-control" type="text" name="descreption" placeholder="description"><br>
+    <br>
+    <input class="form-control" type="number" name="year" placeholder="year enter"><br>
+    <br>
+    <input class="form-control" type="file" name="image"><br>
+    <br>
+    <input class="form-control" type="text" name="author" placeholder="author"> <br>
+    <input class="form-control" type="submit" >
+</form>
+   </div>
+
+ </div>
+
+</div>
+ </section>
+{% endblock %}
